@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="profile-section">
+        <h2>Nicholas Loureiro</h2>
+        <img src="{{ url_for('static', filename='/projeto_adatech/static/images/shinigami.jpg') }}" alt="User Profile Picture" class="profile-picture">
+        <p><strong>Username:</strong> Nico10</p>
+        <p><strong>About Me:</strong> From a young age, I was fascinated by performance starting with racing toy cars and imagining myself as the following Formula 1 star. While my dreams of becoming a professional race car driver may have hit a speed bump, my love for performance never wavered.
+
+            I channeled that enthusiasm into my education, graduating with a degree in Mechanical Engineering, where I learned to make things go fast (well, at least on paper). Building on that foundation, I embarked on a Mechatronics Engineering Bachelor's degree. My passion for speed took a detour into the world of databases, where I discovered a different kind of performance.
+            
+            With a gear shift in my career, I embraced the role of a backend developer, coding my way through complex systems. Though it was thrilling, I found my true calling lay in the art of fine-tuning databases and optimizing their performance. 
+            
+            Currently, I'm engaged in a challenging Python project, and also on a mission to conquer cloud certifications (OCI and AWS) and learn German.</p>
+    </div>
+
+
+    <div class="post">
+    
+        <p><strong>Post pt-br:</strong>{
+            "titulo": "Otimizando o Desempenho de Banco de Dados",
+            "conteudo": "Neste artigo, exploramos estratégias eficazes para otimizar o desempenho de bancos de dados. Abordaremos indexação, caching e técnicas de consulta para melhorar a eficiência.",
+            "autor": "Nico10",
+            "data_hora": "2023-11-26 10:00:00"
+        }</div>
+  
+
+        <div class="doc-section">
+    
+            <p><strong>Como foi feito?</strong>{
+                
+            }</div>
+    
+
+    <div class="interactive-section">
+        <h2>Get to know me</h2>
+        <a href="https://www.linkedin.com/in/nicholasloureiro-" class="btn-link">
+            <button class="btn">View LinkedIn Profile</button>
+        </a>
+    </div>
+
+{% endblock %}
