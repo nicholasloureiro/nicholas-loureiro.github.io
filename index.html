@@ -1,75 +1,94 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Website Title</title>
+    <style>
+        /* Styles for body, container, profile-section, news-feed, 
+           interactive-section, profile-picture, post, post-time, and btn */
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .profile-section, .news-feed, .interactive-section {
+            background: #1e1e1e;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .post {
+            background: #2c2c2c;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .post-time {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #a0a0a0;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+            <div class="profile-section">
+                <h2>Nicholas Loureiro</h2>
+                <img src="{{ url_for('static', filename='/projeto_adatech/static/images/shinigami.jpg') }}" alt="User Profile Picture" class="profile-picture">
+                <p><strong>Username:</strong> Nico10</p>
+                <p><strong>About Me:</strong> [Profile description here]</p>
+            </div>
 
-{% block content %}
-    <div class="profile-section">
-        <h2>Nicholas Loureiro</h2>
-        <img src="{{ url_for('static', filename='/projeto_adatech/static/images/shinigami.jpg') }}" alt="User Profile Picture" class="profile-picture">
-        <p><strong>Username:</strong> Nico10</p>
-        <p><strong>About Me:</strong> From a young age, I was fascinated by performance starting with racing toy cars and imagining myself as the following Formula 1 star. While my dreams of becoming a professional race car driver may have hit a speed bump, my love for performance never wavered.
+            <div class="post">
+                <p><strong>Post pt-br:</strong> {
+                    "titulo": "Otimizando o Desempenho de Banco de Dados",
+                    "conteudo": "Neste artigo, exploramos estratégias eficazes para otimizar o desempenho de bancos de dados. Abordaremos indexação, caching e técnicas de consulta para melhorar a eficiência.",
+                    "autor": "Nico10",
+                    "data_hora": "2023-11-26 10:00:00"
+                }</p>
+            </div>
 
-            I channeled that enthusiasm into my education, graduating with a degree in Mechanical Engineering, where I learned to make things go fast (well, at least on paper). Building on that foundation, I embarked on a Mechatronics Engineering Bachelor's degree. My passion for speed took a detour into the world of databases, where I discovered a different kind of performance.
-            
-            With a gear shift in my career, I embraced the role of a backend developer, coding my way through complex systems. Though it was thrilling, I found my true calling lay in the art of fine-tuning databases and optimizing their performance. 
-            
-            Currently, I'm engaged in a challenging Python project, and also on a mission to conquer cloud certifications (OCI and AWS) and learn German.</p>
+            <div class="doc-section">
+                <p><strong>Como foi feito?</strong> {
+                    <!-- Additional content can go here -->
+                }</p>
+            </div>
+
+            <div class="interactive-section">
+                <h2>Get to know me</h2>
+                <a href="https://www.linkedin.com/in/nicholasloureiro-" class="btn-link">
+                    <button class="btn">View LinkedIn Profile</button>
+                </a>
+            </div>
+        {% endblock %}
     </div>
-
-
-    <div class="post">
-    
-        <p><strong>Post pt-br:</strong>{
-            "titulo": "Otimizando o Desempenho de Banco de Dados",
-            "conteudo": "Neste artigo, exploramos estratégias eficazes para otimizar o desempenho de bancos de dados. Abordaremos indexação, caching e técnicas de consulta para melhorar a eficiência.",
-            "autor": "Nico10",
-            "data_hora": "2023-11-26 10:00:00"
-        }</div>
-  
-
-        <div class="doc-section">
-    
-            <p><strong>Como foi feito?</strong>{
-                Documentação do Projeto AdaTech
-Este documento serve como uma documentação para o projeto realizado no âmbito do módulo de Git da AdaTech. O projeto foi desenvolvido utilizando GitHub Pages, Python e HTML.
-
-Visão Geral do Projeto
-projeto_adatech (Cabeça do Git)
-Descrição: Este é o resultado da conclusão do módulo de Git, onde foram aplicados os conceitos fundamentais do uso de Git e GitHub.
-
-nicholas-loureiro.github.io (Projeto Módulo 2 Ada Tech DevOps)
-Descrição: Este projeto representa o desenvolvimento prático no módulo 2 do curso Ada Tech DevOps, onde foram empregadas técnicas avançadas de DevOps.
-
-Desenvolvimento do Projeto
-Utilização do GitHub Pages
-Descrição: O GitHub Pages foi usado para hospedar o site do projeto, permitindo a demonstração prática das habilidades aprendidas.
-
-Implementação com Python e HTML
-Python:
-A lógica de back-end foi desenvolvida utilizando Python, proporcionando uma base sólida para o processamento de dados e lógica de negócio.
-
-HTML:
-O front-end foi construído com HTML, garantindo uma interface de usuário amigável e responsiva.
-
-Conflito de Merge (2863a7f02005e729bab5f9ad205fe7a756e5913f)
-Este conflito de merge simboliza a integração das diferentes partes do projeto, ressaltando a importância do versionamento eficaz e da resolução de conflitos no Git.
-
-Conclusão
-Este projeto serviu como uma oportunidade valiosa para aplicar os conhecimentos adquiridos em Git, GitHub Pages, Python e HTML, resultando em uma experiência de aprendizado integrada e prática.
-
-Começando
-Para começar a trabalhar com este projeto, clone o repositório e siga as instruções de instalação e configuração.
-
-Pré-requisitos
-Git
-Python 3.x
-Navegador web atualizado
-            }</div>
-    
-
-    <div class="interactive-section">
-        <h2>Get to know me</h2>
-        <a href="https://www.linkedin.com/in/nicholasloureiro-" class="btn-link">
-            <button class="btn">View LinkedIn Profile</button>
-        </a>
-    </div>
-
-{% endblock %}
+</body>
+</html>
